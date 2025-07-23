@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="3.5.16.30" runtimeid="3.5.16.40" libversion="3.5.16.0" compiler="3.5.16.40" lmm="3.5.16.0" profile="CODESYS V3.5 SP16 Patch 4+" settings="SupportOPCUA, UseEmptyNamespaceByDefault, LayoutCalculator=CompatibilityClientSideLayoutCalculator" />
+    <ProjectInfo name="Traslo_st_UBICA_POR_COLOR_y_ROBOT+TABLA" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
+    <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+    <TypeArray name="T_ARRAY__1__55__OF_WORD" size="110" nativesize="110" typeclass="Array" iecname="ARRAY [1..55] OF WORD" basetype="T_WORD">
+      <ArrayDim minrange="1" maxrange="55" />
+    </TypeArray>
+    <TypeUserDef name="T_CTU" size="24" nativesize="24" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="CTU">
+      <UserDefElement iecname="CV" type="T_WORD" byteoffset="14" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_R_TRIG" size="16" nativesize="16" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_TRIG">
+      <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="8" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="9" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_TOF" size="32" nativesize="32" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="TOF">
+      <UserDefElement iecname="IN" type="T_BOOL" byteoffset="8" vartype="VAR_INPUT" />
+      <UserDefElement iecname="PT" type="T_TIME" byteoffset="12" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="16" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="ET" type="T_TIME" byteoffset="20" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_TON" size="32" nativesize="32" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="TON">
+      <UserDefElement iecname="IN" type="T_BOOL" byteoffset="8" vartype="VAR_INPUT" />
+      <UserDefElement iecname="PT" type="T_TIME" byteoffset="12" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="16" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="ET" type="T_TIME" byteoffset="20" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+  </TypeList>
+  <NodeList>
+    <Node name="">
+      <Node name="NUMERO_ESTANTE" type="T_REAL" access="ReadWrite" />
+      <Node name="POSICION" type="T_REAL" access="ReadWrite" />
+      <Node name="VISION_AZUL" type="T_BOOL" access="ReadWrite" />
+      <Node name="VISION_METAL" type="T_BOOL" access="ReadWrite" />
+      <Node name="VISION_VERDE" type="T_BOOL" access="ReadWrite" />
+      <Node name="x_position" type="T_REAL" access="ReadWrite" />
+      <Node name="X_position_FILTRADA" type="T_REAL" access="ReadWrite" />
+      <Node name="Z_position" type="T_REAL" access="ReadWrite" />
+      <Node name="Z_position_FILTRADA" type="T_REAL" access="ReadWrite" />
+    </Node>
+    <Node name="PLC_PRG">
+      <Node name="agarrar_pieza_robot_cart" type="T_BOOL" access="ReadWrite" />
+      <Node name="ALARMA_ACTIVA" type="T_BOOL" access="ReadWrite" />
+      <Node name="At_entry" type="T_BOOL" access="ReadWrite" />
+      <Node name="At_load" type="T_BOOL" access="ReadWrite" />
+      <Node name="auto" type="T_BOOL" access="ReadWrite" />
+      <Node name="avanzar_robot_cartesiano" type="T_BOOL" access="ReadWrite" />
+      <Node name="bajar_robot_cartesiano" type="T_BOOL" access="ReadWrite" />
+      <Node name="cinta_piezas" type="T_BOOL" access="ReadWrite" />
+      <Node name="CINTA_PIEZAS_ACABADAS" type="T_BOOL" access="ReadWrite" />
+      <Node name="CNT_TOTAL" type="T_CTU" access="ReadWrite" />
+      <Node name="color_azul_saturado" type="T_BOOL" access="ReadWrite" />
+      <Node name="color_metal_saturado" type="T_BOOL" access="ReadWrite" />
+      <Node name="color_verde_saturado" type="T_BOOL" access="ReadWrite" />
+      <Node name="count" type="T_INT" access="ReadWrite" />
+      <Node name="count_forks" type="T_INT" access="ReadWrite" />
+      <Node name="CTU_AZUL" type="T_CTU" access="ReadWrite" />
+      <Node name="CTU_METAL" type="T_CTU" access="ReadWrite" />
+      <Node name="CTU_MOV" type="T_CTU" access="ReadWrite" />
+      <Node name="CTU_VERDE" type="T_CTU" access="ReadWrite" />
+      <Node name="CURVA_RODILLOS_2" type="T_BOOL" access="ReadWrite" />
+      <Node name="detec_piezas_cartesiano" type="T_BOOL" access="ReadWrite" />
+      <Node name="deteccion_pieza_robot_cart" type="T_BOOL" access="ReadWrite" />
+      <Node name="Emergency_stop" type="T_BOOL" access="ReadWrite" />
+      <Node name="Emisor_piezas" type="T_BOOL" access="ReadWrite" />
+      <Node name="Emitter" type="T_BOOL" access="ReadWrite" />
+      <Node name="Entry_CONVEYOR_3" type="T_BOOL" access="ReadWrite" />
+      <Node name="FALLO_ROBOT" type="T_BOOL" access="ReadWrite" />
+      <Node name="flanco_carga" type="T_BOOL" access="ReadWrite" />
+      <Node name="flanco_forks_out" type="T_BOOL" access="ReadWrite" />
+      <Node name="Forks_left" type="T_BOOL" access="ReadWrite" />
+      <Node name="Forks_right" type="T_BOOL" access="ReadWrite" />
+      <Node name="GO" type="T_BOOL" access="ReadWrite" />
+      <Node name="Load_conveyor_4" type="T_BOOL" access="ReadWrite" />
+      <Node name="MANDAR_POSICION" type="T_BOOL" access="ReadWrite" />
+      <Node name="Manual" type="T_BOOL" access="ReadWrite" />
+      <Node name="ON_ROBOT" type="T_BOOL" access="ReadWrite" />
+      <Node name="PALET_POS" type="T_BOOL" access="ReadWrite" />
+      <Node name="POS" type="T_WORD" access="ReadWrite" />
+      <Node name="R_TRIG" type="T_R_TRIG" access="ReadWrite" />
+      <Node name="R_TRIG1" type="T_R_TRIG" access="ReadWrite" />
+      <Node name="R_TRIG_AZUL" type="T_R_TRIG" access="ReadWrite" />
+      <Node name="R_TRIG_ESTANTE" type="T_R_TRIG" access="ReadWrite" />
+      <Node name="R_TRIG_METAL" type="T_R_TRIG" access="ReadWrite" />
+      <Node name="R_TRIG_VERDE" type="T_R_TRIG" access="ReadWrite" />
+      <Node name="REGISTRO" type="T_ARRAY__1__55__OF_WORD" access="ReadWrite" />
+      <Node name="Reset" type="T_BOOL" access="ReadWrite" />
+      <Node name="RESET_NUMERO_ESTANTE" type="T_BOOL" access="ReadWrite" />
+      <Node name="robot_ocupado" type="T_BOOL" access="ReadWrite" />
+      <Node name="RODILLOS_1" type="T_BOOL" access="ReadWrite" />
+      <Node name="RODILLOS_3" type="T_BOOL" access="ReadWrite" />
+      <Node name="SENSOR_0" type="T_BOOL" access="ReadWrite" />
+      <Node name="SENSOR_1" type="T_BOOL" access="ReadWrite" />
+      <Node name="SENSOR_piezas_cinta" type="T_BOOL" access="ReadWrite" />
+      <Node name="stacker_crane_limit_left" type="T_BOOL" access="ReadWrite" />
+      <Node name="stacker_crane_limit_middle" type="T_BOOL" access="ReadWrite" />
+      <Node name="stacker_crane_limit_right" type="T_BOOL" access="ReadWrite" />
+      <Node name="stacker_crane_x_sp" type="T_REAL" access="ReadWrite" />
+      <Node name="stacker_crane_z_sp" type="T_REAL" access="ReadWrite" />
+      <Node name="Start" type="T_BOOL" access="ReadWrite" />
+      <Node name="Stop" type="T_BOOL" access="ReadWrite" />
+      <Node name="sys_auto" type="T_BOOL" access="ReadWrite" />
+      <Node name="sys_man" type="T_BOOL" access="ReadWrite" />
+      <Node name="sys_on" type="T_BOOL" access="ReadWrite" />
+      <Node name="Tim_carga" type="T_TON" access="ReadWrite" />
+      <Node name="Tim_descarga" type="T_TON" access="ReadWrite" />
+      <Node name="Tim_descarga1" type="T_TON" access="ReadWrite" />
+      <Node name="Tim_descarga2" type="T_TON" access="ReadWrite" />
+      <Node name="Tim_descarga3" type="T_TON" access="ReadWrite" />
+      <Node name="Tim_descarga4" type="T_TON" access="ReadWrite" />
+      <Node name="Tim_descarga5" type="T_TON" access="ReadWrite" />
+      <Node name="TIM_POS0" type="T_TON" access="ReadWrite" />
+      <Node name="TIM_POSICION" type="T_TOF" access="ReadWrite" />
+      <Node name="TOPE_PIEZAS" type="T_BOOL" access="ReadWrite" />
+      <Node name="TRASLO_CARGADO" type="T_BOOL" access="ReadWrite" />
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
